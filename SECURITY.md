@@ -34,8 +34,7 @@ Until issue #4 replaces this scaffold with the accepted threat model:
   execution environment supports it;
 - no feature package may supply arbitrary executable composition hooks;
 - paths, archives, XML, build-probe output, and external-tool output are untrusted;
-- logs redact secrets and minimize disclosure of local paths/device data;
-- the project does not provide anti-abuse or remote-attestation bypasses.
+- logs redact secrets and minimize disclosure of local paths/device data.
 
 ## Supported versions
 
