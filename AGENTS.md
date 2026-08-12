@@ -69,7 +69,6 @@ architecture ADR set. Avoid inventing cross-package APIs ahead of that decision.
 - Unsupported Android domains fail explicitly. Never fall back to opaque scripts
   merely to make a scenario pass.
 - Fresh-install compatibility and OTA-upgrade compatibility are separate claims.
-- Do not add root concealment or remote-attestation bypass behavior.
 
 ## Work protocol
 
