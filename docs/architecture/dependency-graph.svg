@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1190" viewBox="0 0 1500 1190" role="img" aria-labelledby="title desc">
+  <title id="title">avbcompose accepted package dependency graph</title>
+  <desc id="desc">Arrows mean the Python package at the tail imports the avbcompose top-level Python package at the head. The graph is the rendered form of dependency-policy.json version 1 and dependency-graph.mmd. Every cross-package Python import edge not shown is forbidden; same-package imports are implicit. Subprocess, non-Python tool, and signing invocations are outside this graph and enforced by issue #6.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10.5" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 12 6 L 0 12 z" fill="#26384a"/></marker>
+    <style>
+      .node { fill:#e9f7ed; stroke:#287044; stroke-width:2; }
+      .contract { fill:#e7f0ff; stroke:#24558a; stroke-width:3; }
+      .mechanism { fill:#fff1d6; stroke:#9a5a00; stroke-width:2; }
+      .label { font: 15px sans-serif; fill:#17202a; text-anchor:middle; }
+      .small { font: 12px sans-serif; fill:#364152; }
+      .edge { fill:none; stroke:#26384a; stroke-width:1.75; marker-end:url(#arrow); opacity:.9; }
+      .legend { font: 13px sans-serif; fill:#17202a; }
+    </style>
+  </defs>
+  <rect width="1500" height="1190" fill="#ffffff"/>
+  <text x="750" y="30" class="label" font-size="22" font-weight="bold">avbcompose package dependencies — policy v1</text>
+  <text x="750" y="52" class="small" text-anchor="middle">tail Python package imports head · same-package imports implicit · undeclared Python package import edges forbidden</text>
+
+  <!-- All visible edges are the allowlist in dependency-policy.json. -->
+  <g class="edge" fill="none" stroke="#26384a" stroke-width="1.75" opacity="0.9" marker-end="url(#arrow)">
+    <!-- cli -->
+    <path data-from="cli" data-to="artifacts" d="M150 100 L912.5 710"/><path data-from="cli" data-to="baseline" d="M150 100 L925 1030"/><path data-from="cli" data-to="build" d="M150 100 L1108.3 790"/><path data-from="cli" data-to="compatibility" d="M150 100 L900 550"/><path data-from="cli" data-to="contribution" d="M150 100 L1075 470"/><path data-from="cli" data-to="graph" d="M150 100 L920 870"/><path data-from="cli" data-to="image" d="M150 100 L675 310"/><path data-from="cli" data-to="integration" d="M150 100 L1096.4 630"/><path data-from="cli" data-to="model" d="M150 100 L1190 100"/><path data-from="cli" data-to="plan" d="M150 100 L875 390"/><path data-from="cli" data-to="release" d="M150 100 L475 230"/><path data-from="cli" data-to="source" d="M150 100 L1115.9 950"/><path data-from="cli" data-to="update" d="M150 100 L275 150"/>
+    <!-- update -->
+    <path data-from="update" data-to="artifacts" d="M350 180 L917.9 710"/><path data-from="update" data-to="baseline" d="M350 180 L929.5 1030"/><path data-from="update" data-to="build" d="M350 180 L1112.5 790"/><path data-from="update" data-to="compatibility" d="M350 180 L905 550"/><path data-from="update" data-to="contribution" d="M350 180 L1075 470"/><path data-from="update" data-to="graph" d="M350 180 L925 870"/><path data-from="update" data-to="integration" d="M350 180 L1100 630"/><path data-from="update" data-to="model" d="M350 180 L1190 107"/><path data-from="update" data-to="source" d="M350 180 L1120 950"/>
+    <!-- plan, image, release -->
+    <path data-from="plan" data-to="baseline" d="M950 420 L950 1030"/><path data-from="plan" data-to="compatibility" d="M950 420 L950 550"/><path data-from="plan" data-to="contribution" d="M950 420 L1075 470"/><path data-from="plan" data-to="model" d="M950 420 L1240 130"/><path data-from="image" data-to="model" d="M750 340 L1205 130"/><path data-from="release" data-to="model" d="M550 260 L1190 117.8"/>
+    <!-- contribution -->
+    <path data-from="contribution" data-to="artifacts" d="M1150 500 L975 710"/><path data-from="contribution" data-to="baseline" d="M1150 500 L960.7 1030"/><path data-from="contribution" data-to="build" d="M1150 500 L1150 790"/><path data-from="contribution" data-to="integration" d="M1150 500 L1150 630"/><path data-from="contribution" data-to="model" d="M1150 500 L1261 130"/>
+    <!-- compatibility and integration -->
+    <path data-from="compatibility" data-to="artifacts" d="M950 580 L950 710"/><path data-from="compatibility" data-to="baseline" d="M950 580 L950 1030"/><path data-from="compatibility" data-to="integration" d="M950 580 L1075 630"/><path data-from="compatibility" data-to="model" d="M950 580 L1250 130"/><path data-from="integration" data-to="artifacts" d="M1150 660 L1025 710"/><path data-from="integration" data-to="model" d="M1150 660 L1263.6 130"/>
+    <!-- artifacts, build, graph, source, baseline -->
+    <path data-from="artifacts" data-to="build" d="M950 740 L1075 790"/><path data-from="artifacts" data-to="model" d="M950 740 L1255 130"/><path data-from="build" data-to="graph" d="M1150 820 L1025 870"/><path data-from="build" data-to="model" d="M1150 820 L1265 130"/><path data-from="build" data-to="source" d="M1150 820 L1150 950"/><path data-from="graph" data-to="model" d="M950 900 L1258 130"/><path data-from="graph" data-to="source" d="M950 900 L1075 950"/><path data-from="source" data-to="model" d="M1150 980 L1265.9 130"/><path data-from="baseline" data-to="model" d="M950 1060 L1260 130"/>
+  </g>
+
+  <!-- Nodes are grouped for legibility; their labels carry the same responsibilities as the Mermaid source. -->
+  <g>
+    <rect data-package="cli" data-role="outer orchestration" x="70" y="70" width="160" height="60" rx="8" class="node"/><text x="150" y="95" class="label">cli</text><text x="150" y="114" class="small" text-anchor="middle">outer orchestration</text>
+    <rect data-package="update" data-role="upstream reconciliation" x="270" y="150" width="160" height="60" rx="8" class="node"/><text x="350" y="175" class="label">update</text><text x="350" y="194" class="small" text-anchor="middle">upstream reconciliation</text>
+    <rect data-package="release" data-role="evidence / signer protocol" x="470" y="230" width="160" height="60" rx="8" class="mechanism"/><text x="550" y="255" class="label">release</text><text x="550" y="274" class="small" font-size="11" text-anchor="middle">evidence / signer protocol</text>
+    <rect data-package="image" data-role="plan execution mechanism" x="670" y="310" width="160" height="60" rx="8" class="mechanism"/><text x="750" y="335" class="label">image</text><text x="750" y="354" class="small" font-size="11" text-anchor="middle">plan execution mechanism</text>
+    <rect data-package="plan" data-role="pure semantic solver" x="870" y="390" width="160" height="60" rx="8" class="node"/><text x="950" y="415" class="label">plan</text><text x="950" y="434" class="small" text-anchor="middle">pure semantic solver</text>
+    <rect data-package="contribution" data-role="IR extraction" x="1070" y="470" width="160" height="60" rx="8" class="node"/><text x="1150" y="495" class="label">contribution</text><text x="1150" y="514" class="small" text-anchor="middle">IR extraction</text>
+    <rect data-package="compatibility" data-role="contract validation" x="870" y="550" width="160" height="60" rx="8" class="node"/><text x="950" y="575" class="label">compatibility</text><text x="950" y="594" class="small" text-anchor="middle">contract validation</text>
+    <rect data-package="integration" data-role="Android activation compiler" x="1070" y="630" width="160" height="60" rx="8" class="node"/><text x="1150" y="655" class="label">integration</text><text x="1150" y="674" class="small" font-size="11" text-anchor="middle">Android activation compiler</text>
+    <rect data-package="artifacts" data-role="semantic normalizers" x="870" y="710" width="160" height="60" rx="8" class="node"/><text x="950" y="735" class="label">artifacts</text><text x="950" y="754" class="small" text-anchor="middle">semantic normalizers</text>
+    <rect data-package="build" data-role="hermetic builders" x="1070" y="790" width="160" height="60" rx="8" class="node"/><text x="1150" y="815" class="label">build</text><text x="1150" y="834" class="small" text-anchor="middle">hermetic builders</text>
+    <rect data-package="graph" data-role="configured graph evaluation" x="870" y="870" width="160" height="60" rx="8" class="node"/><text x="950" y="895" class="label">graph</text><text x="950" y="914" class="small" font-size="11" text-anchor="middle">configured graph evaluation</text>
+    <rect data-package="source" data-role="source closure" x="1070" y="950" width="160" height="60" rx="8" class="node"/><text x="1150" y="975" class="label">source</text><text x="1150" y="994" class="small" text-anchor="middle">source closure</text>
+    <rect data-package="baseline" data-role="OTA/device facts" x="870" y="1030" width="160" height="60" rx="8" class="node"/><text x="950" y="1055" class="label">baseline</text><text x="950" y="1074" class="small" text-anchor="middle">OTA/device facts</text>
+    <rect data-package="model" data-role="canonical contracts" x="1190" y="70" width="160" height="60" rx="8" class="contract"/><text x="1270" y="95" class="label">model</text><text x="1270" y="114" class="small" text-anchor="middle">canonical contracts</text>
+  </g>
+  <rect x="70" y="1120" width="20" height="14" class="contract"/><text x="100" y="1132" class="legend">contract owner</text><rect x="250" y="1120" width="20" height="14" class="mechanism"/><text x="280" y="1132" class="legend">mechanism boundary</text><rect x="450" y="1120" width="20" height="14" class="node"/><text x="480" y="1132" class="legend">semantic/orchestration package</text>
+</svg>

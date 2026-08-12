@@ -28,28 +28,46 @@ User instructions and accepted ADRs override this file when they conflict.
 
 Do not copy stale context between issues. Link to the canonical owner instead.
 
-## Architecture map
+## Architecture map and accepted routing
+
+Issue #33 accepts the package/IR boundary for parent #3 criteria 1, 2, and 6.
+Before changing a package, load [ADR 0003](docs/adr/0003-package-layering.md),
+[ADR 0004](docs/adr/0004-canonical-ir-ownership.md), and the executable
+[dependency policy](docs/architecture/dependency-policy.json). The separate
+architecture-test lane statically scans Python and treats every undeclared
+cross-package `avbcompose` top-level import as forbidden, with actionable
+`from -> to` diagnostics. It does not observe or authorize subprocess,
+non-Python tool, or signing invocation; those remain prohibited outside the
+audited process boundary of issue `#6`, which owns their enforcement. Keep the
+policy, package map, Mermaid source, and SVG synchronized.
 
 | Area | Directory | Primary roadmap context |
 |---|---|---|
-| Canonical models and serialization | `src/avbcompose/model/`, `schemas/` | #3, #4, #5, #7 |
-| Repo manifests and source transforms | `src/avbcompose/source/` | #14 |
-| OTA and device facts | `src/avbcompose/baseline/` | #8, #24, #25 |
-| Product and module graphs | `src/avbcompose/graph/`, `probes/` | #15, #16 |
-| Sandboxed builds and cache | `src/avbcompose/build/` | #4, #17 |
-| Artifact semantics | `src/avbcompose/artifacts/` | #11, #23, #25 |
-| Android integration semantics | `src/avbcompose/integration/` | #12, #21, #22, #23 |
-| Compatibility contracts | `src/avbcompose/compatibility/` | #19, #21–#25 |
-| Contribution extraction | `src/avbcompose/contribution/` | #18, #20 |
-| Pure planning | `src/avbcompose/plan/` | #9 |
-| Filesystem/boot/OTA execution | `src/avbcompose/image/` | #10, #24 |
-| Upstream reconciliation | `src/avbcompose/update/` | #19 |
-| Signing and release evidence | `src/avbcompose/release/` | #4, #28, #29 |
-| CLI orchestration | `src/avbcompose/cli/` | #13 |
+| Canonical models and serialization | `src/avbcompose/model/`, `schemas/` | #3, #4, #5, #7; ADR 0003/0004 |
+| Repo manifests and source transforms | `src/avbcompose/source/` | #14; ADR 0003/0004 |
+| OTA and device facts | `src/avbcompose/baseline/` | #8, #24, #25; ADR 0003/0004 |
+| Product and module graphs | `src/avbcompose/graph/`, `probes/` | #15, #16; ADR 0003/0004 |
+| Sandboxed builds and cache | `src/avbcompose/build/`, `tools/containers/` | #4, #17; ADR 0003/0004 |
+| Artifact semantics | `src/avbcompose/artifacts/` | #11, #23, #25; ADR 0003/0004 |
+| Android integration semantics | `src/avbcompose/integration/` | #12, #21, #22, #23; ADR 0003/0004 |
+| Compatibility contracts | `src/avbcompose/compatibility/` | #19, #21–#25; ADR 0003/0004 |
+| Contribution extraction | `src/avbcompose/contribution/` | #18, #20; ADR 0003/0004 |
+| Pure planning | `src/avbcompose/plan/` | #9; ADR 0003/0004 |
+| Filesystem/boot/OTA execution | `src/avbcompose/image/` | #10, #24; ADR 0003/0004 |
+| Upstream reconciliation | `src/avbcompose/update/` | #19; ADR 0003/0004 |
+| Signing and release evidence | `src/avbcompose/release/` | #4, #28, #29; ADR 0003/0004 |
+| CLI orchestration | `src/avbcompose/cli/` | #13; ADR 0003/0004 |
 | Declarative feature data | `catalog/` | #26, #27 |
 
-The package boundaries are provisional until issue #3 accepts the complete
-architecture ADR set. Avoid inventing cross-package APIs ahead of that decision.
+`avbroot` and `afsr` are external tools, not Python package layers. The import
+policy does not authorize invoking them: later execution must use the audited
+process boundary from #6. Do not add feature-specific packages or mechanism
+imports to the map.
+
+The package and IR boundaries above are accepted by child issue #33. The
+remaining #3 ADR children still own adapter selection, error taxonomy, schema
+evolution, and repository-split governance; avoid inventing cross-package APIs
+ahead of those decisions.
 
 ## Non-negotiable engineering rules
 

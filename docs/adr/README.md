@@ -7,7 +7,11 @@ operational policy.
 | ADR | Status | Decision |
 |---|---|---|
 | [0001](0001-modular-monorepo.md) | Accepted | Begin as a modular monorepo and split only from production evidence. |
+| [0003](0003-package-layering.md) | Accepted | Enforce package responsibilities and a one-way internal import allowlist. |
+| [0004](0004-canonical-ir-ownership.md) | Accepted | Keep canonical interchange contracts and their lifecycle in `model`. |
 
-Issue #3 owns the broader foundation ADR set. New ADRs should use a four-digit
-number, state their owning issue, list alternatives, describe security and
-migration consequences, and include an acceptance date.
+Issue #3 owns the remaining foundation ADR set. ADR 0003's executable policy is
+[`dependency-policy.json`](../architecture/dependency-policy.json); the separate
+architecture-test lane consumes it. New ADRs should use a four-digit number,
+state their owning issue, list alternatives, describe security and migration
+consequences, and include an acceptance date.
