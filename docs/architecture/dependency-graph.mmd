@@ -1,0 +1,78 @@
+%% ADR 0003 / dependency-policy.json v1
+%% Arrows mean: importing Python package --> directly imported avbcompose top-level Python package.
+%% Same-package Python imports are implicit; every other cross-package Python import edge is forbidden.
+%% Subprocess, non-Python tool, and signing invocations are outside this graph and enforced by issue #6.
+flowchart LR
+    cli["cli<br/>outer orchestration"]
+    update["update<br/>upstream reconciliation"]
+    release["release<br/>evidence / signer protocol"]
+    image["image<br/>plan execution mechanism"]
+    plan["plan<br/>pure semantic solver"]
+    contribution["contribution<br/>IR extraction"]
+    compatibility["compatibility<br/>contract validation"]
+    integration["integration<br/>Android activation compiler"]
+    artifacts["artifacts<br/>semantic normalizers"]
+    build["build<br/>hermetic builders"]
+    graph["graph<br/>configured graph evaluation"]
+    source["source<br/>source closure"]
+    baseline["baseline<br/>OTA/device facts"]
+    model["model<br/>canonical contracts"]
+
+    cli --> artifacts
+    cli --> baseline
+    cli --> build
+    cli --> compatibility
+    cli --> contribution
+    cli --> graph
+    cli --> image
+    cli --> integration
+    cli --> model
+    cli --> plan
+    cli --> release
+    cli --> source
+    cli --> update
+
+    update --> artifacts
+    update --> baseline
+    update --> build
+    update --> compatibility
+    update --> contribution
+    update --> graph
+    update --> integration
+    update --> model
+    update --> source
+
+    plan --> baseline
+    plan --> compatibility
+    plan --> contribution
+    plan --> model
+    image --> model
+    release --> model
+
+    contribution --> artifacts
+    contribution --> baseline
+    contribution --> build
+    contribution --> integration
+    contribution --> model
+    compatibility --> artifacts
+    compatibility --> baseline
+    compatibility --> integration
+    compatibility --> model
+    integration --> artifacts
+    integration --> model
+    artifacts --> build
+    artifacts --> model
+    build --> graph
+    build --> model
+    build --> source
+    graph --> model
+    graph --> source
+    source --> model
+    baseline --> model
+
+    classDef contract fill:#e7f0ff,stroke:#24558a,stroke-width:2px;
+    classDef mechanism fill:#fff1d6,stroke:#9a5a00;
+    classDef semantic fill:#e9f7ed,stroke:#287044;
+    class model contract;
+    class image,release mechanism;
+    class artifacts,baseline,build,compatibility,contribution,graph,integration,plan,source,update,cli semantic;
