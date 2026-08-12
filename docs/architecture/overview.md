@@ -102,5 +102,5 @@ and consumer without defining #5's fields.
 
 This slice does not define schema fields, sandbox technology, signer storage,
 adapter selection, extension protocols, error taxonomy, or the complete paper
-walkthroughs. Those remain the explicitly owned follow-up work from #3, #4,
-#5, #6, #17, and #32.
+walkthroughs. Those remain explicitly owned by issues #3, #4, #5, #6, #17,
+and #32.

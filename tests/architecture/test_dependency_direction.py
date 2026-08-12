@@ -1251,15 +1251,10 @@ class DependencyDirectionTests(unittest.TestCase):
                         _parse_svg_nodes(svg, packages)
 
     def test_repository_policy_and_imports(self) -> None:
-        if not _POLICY_PATH.is_file():
-            self.skipTest(
-                "docs/architecture/dependency-policy.json is not present; run this integration check "
-                "centrally after the docs lane adds the versioned policy"
-            )
         try:
             allowed = _load_policy(_POLICY_PATH, _SOURCE_ROOT)
             edges = _scan_imports(_SOURCE_ROOT, set(allowed))
-        except (_PolicyError, _SourceError) as error:
+        except (FileNotFoundError, _PolicyError, _SourceError) as error:
             self.fail(str(error))
         diagnostics = _violations(edges, allowed, _POLICY_PATH)
         self.assertEqual(diagnostics, [], "\n".join(diagnostics))

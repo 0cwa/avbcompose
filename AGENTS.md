@@ -37,9 +37,9 @@ Before changing a package, load [ADR 0003](docs/adr/0003-package-layering.md),
 architecture-test lane statically scans Python and treats every undeclared
 cross-package `avbcompose` top-level import as forbidden, with actionable
 `from -> to` diagnostics. It does not observe or authorize subprocess,
-non-Python tool, or signing invocation; those remain prohibited outside issue
-#6's audited process boundary, which owns their enforcement. Keep the policy,
-package map, Mermaid source, and SVG synchronized.
+non-Python tool, or signing invocation; those remain prohibited outside the
+audited process boundary of issue `#6`, which owns their enforcement. Keep the
+policy, package map, Mermaid source, and SVG synchronized.
 
 | Area | Directory | Primary roadmap context |
 |---|---|---|
