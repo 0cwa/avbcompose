@@ -49,8 +49,6 @@ NON-NEGOTIABLE CONSTRAINTS
 - Do not mount Android partition images through the host kernel.
 - Unsupported domains fail explicitly; never bypass validation to make progress.
 - Fresh-install and OTA-upgrade compatibility are distinct claims.
-- Do not implement Play Integrity, banking, DRM, root-detection, or anti-abuse
-  bypasses.
 - Do not introduce a public schema, trust-boundary, dependency-direction, or
   extension-interface change without the required ADR update.
 - Never claim tests passed unless they ran in the current worktree.
