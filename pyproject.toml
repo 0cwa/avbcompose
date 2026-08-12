@@ -1,0 +1,28 @@
+[project]
+name = "avbcompose"
+version = "0.0.0"
+description = "Security-first reproducible Android binary composition"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = "GPL-3.0-only"
+authors = [{ name = "avbcompose contributors" }]
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Environment :: Console",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/0cwa/avbcompose"
+Issues = "https://github.com/0cwa/avbcompose/issues"
+Roadmap = "https://github.com/0cwa/avbcompose/issues/1"
+
+[tool.uv]
+required-version = "==0.10.0"
+package = false
