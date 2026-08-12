@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "packages": {
+    "artifacts": ["build", "model"],
+    "baseline": ["model"],
+    "build": ["graph", "model", "source"],
+    "cli": ["artifacts", "baseline", "build", "compatibility", "contribution", "graph", "image", "integration", "model", "plan", "release", "source", "update"],
+    "compatibility": ["artifacts", "baseline", "integration", "model"],
+    "contribution": ["artifacts", "baseline", "build", "integration", "model"],
+    "graph": ["model", "source"],
+    "image": ["model"],
+    "integration": ["artifacts", "model"],
+    "model": [],
+    "plan": ["baseline", "compatibility", "contribution", "model"],
+    "release": ["model"],
+    "source": ["model"],
+    "update": ["artifacts", "baseline", "build", "compatibility", "contribution", "graph", "integration", "model", "source"]
+  }
+}
