@@ -80,6 +80,3 @@ production signing authority. Root frameworks are optional replaceable backends,
 not the foundation of the system. The default production profile is expected to
 provide no app-accessible root and no writable privileged runtime module store.
 
-This project does not aim to bypass Play Integrity, banking, DRM, or other
-anti-abuse controls.
-
