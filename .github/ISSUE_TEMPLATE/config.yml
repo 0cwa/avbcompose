@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Project roadmap and issue index
+    url: https://github.com/0cwa/avbcompose/issues/1
+    about: Read the canonical context before opening work.
+  - name: Private security report
+    url: https://github.com/0cwa/avbcompose/security/advisories/new
+    about: Report vulnerabilities privately when the repository supports it.

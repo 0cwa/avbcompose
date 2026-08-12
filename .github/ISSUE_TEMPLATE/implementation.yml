@@ -1,0 +1,65 @@
+name: Implementation task
+description: A bounded child task under a roadmap epic
+body:
+  - type: input
+    id: parent
+    attributes:
+      label: Parent epic
+      description: Link the roadmap epic and identify its acceptance criteria.
+      placeholder: "#3 — acceptance criteria 2 and 6"
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Why / user outcome
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-goals
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and context to load
+    validations:
+      required: true
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Deliverables
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true
+  - type: textarea
+    id: testing
+    attributes:
+      label: Tests and fixtures
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: Security and reproducibility considerations
+    validations:
+      required: true
+  - type: textarea
+    id: handoff
+    attributes:
+      label: Agent handoff requirements
+    validations:
+      required: true
