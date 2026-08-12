@@ -1,0 +1,40 @@
+name: Architecture decision
+description: Propose a change to a public boundary, schema, or security invariant
+body:
+  - type: input
+    id: context_issue
+    attributes:
+      label: Owning roadmap issue
+      placeholder: "#3"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and problem
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints and security invariants
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options considered
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: Proposed decision
+    validations:
+      required: true
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Consequences, migration, and validation
+    validations:
+      required: true
