@@ -76,6 +76,43 @@ Probes and catalog data are outside the Python package graph. The import linter
 does not inspect their execution or prove that other code cannot invoke a tool
 or signer through a subprocess.
 
+## Canonical rootless effect vocabulary
+
+The reusable vocabulary is mechanism-independent. It describes what a module or
+other producer requires or provides; it does not select installer scripts,
+callbacks, filesystem paths, or backend implementations. The conceptual effect
+families are placement, init, property, typed XML, metadata, SELinux/labels,
+update policy, and root/profile integration. Lifecycle, capability, permission,
+findings, safety, verification, exact-base, and filesystem/topology data are
+qualifiers, preconditions, or evidence domains—not additional effect families.
+
+The shared contract primitives are:
+
+- `ArtifactInput`: digest-bound archive identity, signature result, allowlisted
+  members, and APK signer/version/ABI facts.
+- `InstallFile`: target partition/path, mode and ownership, file-context
+  resolution, collision policy, digest, and postcondition.
+- `AndroidAppIntegration`: privileged-app placement, permission/sysconfig XML,
+  package identity, lifecycle, and expected PackageManager grants.
+- `InitService`: fixed argv/environment, UID/GID, groups, capabilities,
+  dedicated SELinux domain, trigger/class, ordering, and success postcondition.
+- `SeappAssignment`: package selector, process/data domains, target context
+  files, deterministic ordering, and idempotency.
+- `SELinuxPolicyDelta`: exact-base types, transitions, and narrowly scoped allow
+  rules with compile, neverallow, loaded-policy, and label evidence.
+- `LifecycleDataEffect`: a closed set of reviewed operations for cache
+  invalidation, relabeling, trust-store projection, runtime-data provisioning,
+  ordered backup, and atomic state rewrites.
+- `CompatibilityPrecondition`: exact base, Android/API, ABI, A/B/update-engine,
+  service/type/path, kernel/configfs, and fresh-install/upgrade requirements.
+
+These primitives cross boundaries as model-owned, versioned, digest-bound
+contracts. Issue #5 owns their serialized names, versions, canonical examples,
+unknown-value rejection, and migrations; #11 and #26 normalize module inputs,
+#12 and #21 compile Android integration and policy effects, and #9 resolves them
+into semantic `PatchPlan` operations. A `u:r:su:s0` label is evidence to
+interpret, not proof of a Magisk/KernelSU runtime dependency.
+
 ## External tools and trust boundaries
 
 `avbroot` is an external OTA/AVB delivery and signing executable. `afsr` is an

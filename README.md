@@ -16,7 +16,7 @@ result into existing Android partitions, and produce a fully verified OTA using
 - [Canonical project charter and roadmap](https://github.com/0cwa/avbcompose/issues/1)
 - [Agent operating instructions](AGENTS.md)
 - [Roadmap index](ROADMAP.md)
-- [Architecture overview](docs/architecture/overview.md)
+- [Architecture overview and canonical effect vocabulary](docs/architecture/overview.md#canonical-rootless-effect-vocabulary)
 - [Architecture decisions](docs/adr/README.md)
 - [Security policy](SECURITY.md)
 
@@ -79,4 +79,3 @@ Untrusted source code and build scripts must never share a trust zone with
 production signing authority. Root frameworks are optional replaceable backends,
 not the foundation of the system. The default production profile is expected to
 provide no app-accessible root and no writable privileged runtime module store.
-

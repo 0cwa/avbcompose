@@ -71,6 +71,10 @@ ahead of those decisions.
 
 ## Non-negotiable engineering rules
 
+- Do not treat an Android `su` SELinux domain as proof of a Magisk/KernelSU
+  runtime dependency. Rootless output may provide required authority through
+  patched images, init services, credentials, and SELinux policy; determine
+  dependencies from complete runtime evidence, not a domain name alone.
 - Use the real Android build system as the authority for configured Make/Soong
   semantics. Static scanning may provide hints only.
 - Contributions cross trust boundaries as typed, versioned data. Do not pass

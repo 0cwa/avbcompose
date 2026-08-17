@@ -114,7 +114,9 @@ public constructor. #5 decides field shapes and concrete schema APIs.
 ## Follow-up questions
 
 - Issue #5 must define field-level schemas, canonical ordering, digest envelope,
-  compatibility windows, and migration test vectors.
+  compatibility windows, and migration test vectors for the canonical rootless
+  effect vocabulary in the architecture overview. #37 governs evolution and
+  deprecation policy; it does not define a competing effect taxonomy.
 - Issue #3's later adapter ADR must define capability-based producer selection
   and extension boundaries.
 - Issue #4 must define how provenance and validation evidence cross the signer
