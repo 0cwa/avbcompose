@@ -86,6 +86,14 @@ update policy, and root/profile integration. Lifecycle, capability, permission,
 findings, safety, verification, exact-base, and filesystem/topology data are
 qualifiers, preconditions, or evidence domains—not additional effect families.
 
+This vocabulary describes changes composed into an existing, verified full OTA.
+It is not a runtime module API, installer ABI, root-framework implementation, or
+device-side installation engine.
+
+These are architecture-level concepts, not frozen serialized identifiers. Issue
+#5 owns schema names, field shapes, versions, examples, rejection rules, and
+migrations.
+
 The shared contract primitives are:
 
 - `ArtifactInput`: digest-bound archive identity, signature result, allowlisted
